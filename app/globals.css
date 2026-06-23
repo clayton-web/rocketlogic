@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Logo-derived palette */
+  --rl-bg: #0b1120;
+  --rl-surface: #111827;
+  --rl-surface-elevated: #161f35;
+  --rl-border: rgba(255, 255, 255, 0.08);
+  --rl-border-hover: rgba(2, 132, 199, 0.4);
+  --rl-text: #f8fafc;
+  --rl-text-muted: #94a3b8;
+  --rl-navy: #1b365d;
+  --rl-gray: #616161;
+  --rl-accent: #d32f2f;
+  --rl-accent-hover: #b71c1c;
+  --rl-accent-secondary: #0284c7;
+  --rl-flame: #f97316;
+  --rl-success: #22c55e;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-rl-bg: var(--rl-bg);
+  --color-rl-surface: var(--rl-surface);
+  --color-rl-surface-elevated: var(--rl-surface-elevated);
+  --color-rl-border: var(--rl-border);
+  --color-rl-text: var(--rl-text);
+  --color-rl-text-muted: var(--rl-text-muted);
+  --color-rl-navy: var(--rl-navy);
+  --color-rl-gray: var(--rl-gray);
+  --color-rl-accent: var(--rl-accent);
+  --color-rl-accent-hover: var(--rl-accent-hover);
+  --color-rl-accent-secondary: var(--rl-accent-secondary);
+  --color-rl-flame: var(--rl-flame);
+  --color-rl-success: var(--rl-success);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--rl-bg);
+  color: var(--rl-text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--rl-accent-secondary) 35%, transparent);
+  color: var(--rl-text);
 }

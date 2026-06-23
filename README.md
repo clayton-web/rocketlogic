@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rocket Logic
+
+Public-facing website for Rocket Logic Inc. — the headquarters for the Rocket Logic software ecosystem.
+
+## Stack
+
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Geist Sans via `next/font`
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/                  # Routes and pages
+components/
+  brand/              # Logo and brand assets
+  ecosystem/          # Product cards and grid
+  hero/               # Dashboard preview mockup
+  layout/             # Header and footer
+  sections/           # Landing page sections
+  ui/                 # Reusable UI primitives
+lib/
+  products.ts         # Central product data model
+  constants.ts        # Company copy and routes
+  metadata.ts         # SEO configuration
+public/
+  logo.png            # Official Rocket Logic logo
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Adding a Product
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Add an entry to `lib/products.ts`. Product cards and future navigation update automatically.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy to Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+The project is configured for Vercel out of the box via `vercel.json`.
+
+## Brand Colors
+
+Logo-derived CSS variables are defined in `app/globals.css`:
+
+| Token | Value | Source |
+|-------|-------|--------|
+| `--rl-accent` | `#D32F2F` | Rocket body red |
+| `--rl-accent-secondary` | `#0284C7` | Motion swoosh blue |
+| `--rl-navy` | `#1B365D` | Rocket fins / wordmark |
+| `--rl-bg` | `#0B1120` | Dark theme base |
