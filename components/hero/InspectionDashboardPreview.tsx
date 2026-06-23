@@ -39,18 +39,6 @@ export function InspectionDashboardPreview() {
           </aside>
 
           <div className="col-span-12 p-4 sm:col-span-9 sm:p-5">
-            <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-sm font-medium text-rl-text">
-                  Inspection Overview
-                </p>
-                <p className="text-xs text-rl-text-muted">
-                  12 active properties · 4 pending reports
-                </p>
-              </div>
-              <div className="h-8 w-28 rounded-md bg-rl-accent/90" />
-            </div>
-
             <div className="mb-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
               {[
                 { label: "Completed", value: "128" },

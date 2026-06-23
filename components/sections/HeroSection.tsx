@@ -1,52 +1,37 @@
 import { Logo } from "@/components/brand/Logo";
-import { InspectionDashboardPreview } from "@/components/hero/InspectionDashboardPreview";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { COMPANY, ROUTES } from "@/lib/constants";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[85vh] flex-col justify-center pt-24 pb-16 lg:min-h-[90vh] lg:pt-28 lg:pb-20">
-      <div className="pointer-events-none absolute inset-x-0 top-1/4 mx-auto h-64 max-w-3xl rounded-full bg-rl-accent-secondary/[0.07] blur-3xl" />
-
-      <Container className="relative">
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+    <section className="flex min-h-[88vh] flex-col justify-center pt-28 pb-20 lg:min-h-[92vh] lg:pt-32 lg:pb-28">
+      <Container className="max-w-3xl">
+        <div className="flex flex-col items-start">
           <Logo
-            width={180}
-            height={54}
+            width={148}
+            height={44}
             priority
             linked={false}
-            className="mb-8 lg:mb-10"
+            className="mb-16 opacity-95"
           />
 
-          <h1 className="text-4xl font-semibold tracking-tight text-rl-text sm:text-5xl lg:text-6xl">
-            {COMPANY.shortName}
+          <h1 className="max-w-2xl text-4xl font-medium tracking-[-0.03em] text-rl-text sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
+            {COMPANY.slogan}
           </h1>
 
-          <p className="mt-4 text-lg text-rl-accent-secondary sm:text-xl">
-            {COMPANY.slogan}
-          </p>
-
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-rl-text-muted sm:text-lg">
-            {COMPANY.tagline}
-          </p>
-
-          <div className="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center">
-            <Button href={ROUTES.inspection} className="w-full sm:w-auto">
-              Launch Rocket Inspection
-            </Button>
-            <Button
-              href="#ecosystem"
-              variant="ghost"
-              className="w-full sm:w-auto"
+          <Link
+            href={ROUTES.inspection}
+            className="group mt-12 inline-flex min-h-11 items-center gap-2 text-sm text-rl-text-muted transition-colors hover:text-rl-text"
+          >
+            Rocket Inspection
+            <span
+              aria-hidden
+              className="transition-transform duration-200 group-hover:translate-x-0.5"
             >
-              Explore Products
-            </Button>
-          </div>
-        </div>
-
-        <div className="mt-14 lg:mt-20">
-          <InspectionDashboardPreview />
+              →
+            </span>
+          </Link>
         </div>
       </Container>
     </section>

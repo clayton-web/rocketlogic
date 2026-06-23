@@ -24,5 +24,4 @@ export const ROUTES = {
 export const NAV_LINKS = [
   { label: "Products", href: "#ecosystem" },
   { label: "Mission", href: "#mission" },
-  { label: "Contact", href: ROUTES.contact },
 ] as const;

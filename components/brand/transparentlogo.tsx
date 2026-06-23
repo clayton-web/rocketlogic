@@ -3,7 +3,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/lib/constants";
 
-type LogoProps = {
+type TransparentLogoProps = {
   className?: string;
   width?: number;
   height?: number;
@@ -11,16 +11,16 @@ type LogoProps = {
   linked?: boolean;
 };
 
-export function Logo({
+export function TransparentLogo({
   className,
   width = 160,
   height = 48,
   priority = false,
   linked = true,
-}: LogoProps) {
+}: TransparentLogoProps) {
   const image = (
     <Image
-      src="/rocketlogic-transparent.png"
+      src="/transparent-logo.png"
       alt="Rocket Logic Inc."
       width={width}
       height={height}

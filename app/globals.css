@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  /* Logo-derived palette */
-  --rl-bg: #0b1120;
-  --rl-surface: #111827;
-  --rl-surface-elevated: #161f35;
-  --rl-border: rgba(255, 255, 255, 0.08);
-  --rl-border-hover: rgba(2, 132, 199, 0.4);
-  --rl-text: #f8fafc;
-  --rl-text-muted: #94a3b8;
+  --rl-bg: #030712;
+  --rl-surface: #0a0f1a;
+  --rl-surface-elevated: #111827;
+  --rl-border: rgba(255, 255, 255, 0.06);
+  --rl-border-hover: rgba(255, 255, 255, 0.12);
+  --rl-text: #f4f4f5;
+  --rl-text-muted: #71717a;
   --rl-navy: #1b365d;
   --rl-gray: #616161;
   --rl-accent: #d32f2f;
@@ -63,6 +62,6 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--rl-accent-secondary) 35%, transparent);
+  background: color-mix(in srgb, var(--rl-accent-secondary) 25%, transparent);
   color: var(--rl-text);
 }
