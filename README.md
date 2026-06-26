@@ -21,7 +21,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Environment Variables
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_SITE_URL=https://www.rocketlogic.ca
 ```
 
 ## Project Structure

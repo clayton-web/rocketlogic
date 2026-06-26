@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { COMPANY } from "./constants";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rocketlogic.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rocketlogic.ca";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
