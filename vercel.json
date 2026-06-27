@@ -5,6 +5,14 @@
   "installCommand": "npm install",
   "rewrites": [
     {
+      "source": "/dashboard",
+      "destination": "https://rocket-pm-dashboard-app.vercel.app/dashboard"
+    },
+    {
+      "source": "/dashboard/:path*",
+      "destination": "https://rocket-pm-dashboard-app.vercel.app/dashboard/:path*"
+    },
+    {
       "source": "/inspection",
       "destination": "https://rocket-inspection-app.vercel.app/inspection"
     },
