@@ -16,7 +16,7 @@ export function Container({
   return (
     <Component
       id={id}
-      className={cn("mx-auto w-full max-w-6xl px-6 lg:px-8", className)}
+      className={cn("mx-auto w-full max-w-[1120px] px-4 md:px-8", className)}
     >
       {children}
     </Component>

@@ -10,13 +10,13 @@ export const siteMetadata: Metadata = {
     default: `${COMPANY.shortName} — ${COMPANY.slogan}`,
     template: `%s | ${COMPANY.shortName}`,
   },
-  description: COMPANY.tagline,
+  description: COMPANY.description,
   keywords: [
     "Rocket Logic",
-    "property inspections",
-    "operations software",
+    "business software",
     "workflow automation",
-    "business efficiency",
+    "operations software",
+    "property inspections",
   ],
   authors: [{ name: COMPANY.name }],
   openGraph: {
@@ -24,10 +24,10 @@ export const siteMetadata: Metadata = {
     locale: "en_US",
     siteName: COMPANY.shortName,
     title: `${COMPANY.shortName} — ${COMPANY.slogan}`,
-    description: COMPANY.tagline,
+    description: COMPANY.description,
     images: [
       {
-        url: "/logo.png",
+        url: "/brand/rocket-logic-logo.png",
         width: 1200,
         height: 630,
         alt: `${COMPANY.name} logo`,
@@ -37,8 +37,8 @@ export const siteMetadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${COMPANY.shortName} — ${COMPANY.slogan}`,
-    description: COMPANY.tagline,
-    images: ["/logo.png"],
+    description: COMPANY.description,
+    images: ["/brand/rocket-logic-logo.png"],
   },
   robots: {
     index: true,

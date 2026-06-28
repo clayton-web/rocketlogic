@@ -13,19 +13,19 @@ type LogoProps = {
 
 export function Logo({
   className,
-  width = 160,
-  height = 48,
+  width = 140,
+  height = 40,
   priority = false,
   linked = true,
 }: LogoProps) {
   const image = (
     <Image
-      src="/rocketlogic-transparent.png"
+      src="/brand/rocket-logic-logo.png"
       alt="Rocket Logic Inc."
       width={width}
       height={height}
       priority={priority}
-      className={cn("h-auto w-auto bg-transparent object-contain", className)}
+      className={cn("h-auto w-auto object-contain", className)}
     />
   );
 
@@ -34,7 +34,11 @@ export function Logo({
   }
 
   return (
-    <Link href={ROUTES.home} className="inline-flex shrink-0 items-center">
+    <Link
+      href={ROUTES.home}
+      className="inline-flex shrink-0 items-center"
+      aria-label="Rocket Logic Inc. home"
+    >
       {image}
     </Link>
   );

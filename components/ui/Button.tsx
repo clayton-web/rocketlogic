@@ -1,26 +1,22 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "ghost" | "secondary";
+type ButtonVariant = "primary" | "secondary";
 
 type ButtonProps = {
   children: React.ReactNode;
   href?: string;
   variant?: ButtonVariant;
   className?: string;
-  external?: boolean;
   onClick?: () => void;
   type?: "button" | "submit";
-  disabled?: boolean;
 };
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-rl-accent text-white hover:bg-rl-accent-hover border border-transparent shadow-[0_0_0_1px_rgba(211,47,47,0.25)]",
-  ghost:
-    "bg-transparent text-rl-text border border-rl-border hover:border-rl-border-hover hover:bg-white/[0.03]",
+    "bg-rl-red text-white border border-rl-red hover:bg-rl-red-hover active:bg-rl-red-pressed",
   secondary:
-    "bg-rl-surface-elevated text-rl-text border border-rl-border hover:border-rl-border-hover",
+    "bg-rl-surface-raised text-rl-text border border-rl-border-strong hover:border-rl-text-subtle",
 };
 
 export function Button({
@@ -28,31 +24,16 @@ export function Button({
   href,
   variant = "primary",
   className,
-  external,
   onClick,
   type = "button",
-  disabled,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex min-h-11 items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rl-accent-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-rl-bg disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex min-h-11 items-center justify-center rounded-full px-6 text-sm font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rl-blue focus-visible:ring-offset-2 focus-visible:ring-offset-rl-bg",
     variantStyles[variant],
     className,
   );
 
   if (href) {
-    if (external) {
-      return (
-        <a
-          href={href}
-          className={classes}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {children}
-        </a>
-      );
-    }
-
     return (
       <Link href={href} className={classes} onClick={onClick}>
         {children}
@@ -61,12 +42,7 @@ export function Button({
   }
 
   return (
-    <button
-      type={type}
-      className={classes}
-      onClick={onClick}
-      disabled={disabled}
-    >
+    <button type={type} className={classes} onClick={onClick}>
       {children}
     </button>
   );

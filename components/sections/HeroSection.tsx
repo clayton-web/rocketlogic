@@ -1,37 +1,41 @@
 import { Logo } from "@/components/brand/Logo";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { COMPANY, ROUTES } from "@/lib/constants";
-import Link from "next/link";
+import { COMPANY } from "@/lib/constants";
 
 export function HeroSection() {
   return (
-    <section className="flex min-h-[88vh] flex-col justify-center pt-28 pb-20 lg:min-h-[92vh] lg:pt-32 lg:pb-28">
-      <Container className="max-w-3xl">
-        <div className="flex flex-col items-start">
+    <section className="relative overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(ellipse_70%_55%_at_50%_-15%,rgba(31,111,235,0.07),transparent)]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-rl-border to-transparent"
+      />
+
+      <Container className="relative flex min-h-[calc(100dvh-3.5rem)] flex-col items-center justify-center py-16 text-center md:min-h-[calc(100dvh-4rem)] md:py-24">
+        <div className="animate-fade-up mb-8 md:mb-10">
           <Logo
-            width={148}
-            height={44}
-            priority
             linked={false}
-            className="mb-16 opacity-95"
+            width={220}
+            height={64}
+            priority
+            className="mx-auto w-[11rem] md:w-[13.75rem]"
           />
+        </div>
 
-          <h1 className="max-w-2xl text-4xl font-medium tracking-[-0.03em] text-rl-text sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
-            {COMPANY.slogan}
-          </h1>
+        <h1 className="animate-fade-up animate-fade-up-delay-1 max-w-[16ch] text-[2rem] font-bold leading-[1.12] tracking-[-0.02em] text-rl-text sm:max-w-none sm:text-4xl md:text-[3.25rem] md:leading-[1.08]">
+          {COMPANY.slogan}
+        </h1>
 
-          <Link
-            href={ROUTES.inspection}
-            className="group mt-12 inline-flex min-h-11 items-center gap-2 text-sm text-rl-text-muted transition-colors hover:text-rl-text"
-          >
-            Rocket Inspection
-            <span
-              aria-hidden
-              className="transition-transform duration-200 group-hover:translate-x-0.5"
-            >
-              →
-            </span>
-          </Link>
+        <p className="animate-fade-up animate-fade-up-delay-2 mt-5 max-w-[28ch] text-sm leading-relaxed text-rl-text-muted sm:mt-6 sm:max-w-md sm:text-base">
+          {COMPANY.description}
+        </p>
+
+        <div className="animate-fade-up animate-fade-up-delay-3 mt-9 sm:mt-11">
+          <Button href="#products">Explore Products</Button>
         </div>
       </Container>
     </section>

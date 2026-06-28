@@ -12,21 +12,21 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-rl-border py-10">
-      <Container className="flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-rl-text-muted">
+    <footer className="border-t border-rl-border">
+      <Container className="flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm text-rl-text-subtle">
           © {year} {COMPANY.name}
         </p>
 
         <nav
-          className="flex flex-wrap gap-x-5 gap-y-2"
+          className="flex flex-wrap gap-x-6 gap-y-2"
           aria-label="Footer navigation"
         >
           {footerLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="min-h-11 text-xs text-rl-text-muted transition-colors hover:text-rl-text sm:min-h-0"
+              className="text-sm text-rl-text-subtle transition-colors hover:text-rl-text"
             >
               {link.label}
             </Link>

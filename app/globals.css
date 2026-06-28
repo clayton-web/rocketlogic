@@ -1,42 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --rl-bg: #030712;
-  --rl-surface: #0a0f1a;
-  --rl-surface-elevated: #111827;
-  --rl-border: rgba(255, 255, 255, 0.06);
-  --rl-border-hover: rgba(255, 255, 255, 0.12);
-  --rl-text: #f4f4f5;
-  --rl-text-muted: #71717a;
-  --rl-navy: #1b365d;
-  --rl-gray: #616161;
-  --rl-accent: #d32f2f;
-  --rl-accent-hover: #b71c1c;
-  --rl-accent-secondary: #0284c7;
-  --rl-flame: #f97316;
-  --rl-success: #22c55e;
+  --rl-bg: #050506;
+  --rl-surface: #0b0b0d;
+  --rl-surface-raised: #121216;
+  --rl-surface-soft: #18181d;
+  --rl-border: #2b2b33;
+  --rl-border-strong: #454550;
+  --rl-text: #f5f5f7;
+  --rl-text-muted: #a1a1aa;
+  --rl-text-subtle: #73737d;
+  --rl-red: #e10613;
+  --rl-red-hover: #f01824;
+  --rl-red-pressed: #b9050f;
+  --rl-blue: #1f6feb;
+  --rl-navy: #10172f;
+  --rl-yellow: #ffd54a;
+  --rl-success: #8fe3bf;
+  --rl-radius-sm: 8px;
+  --rl-radius-md: 12px;
+  --rl-radius-lg: 18px;
+  --rl-radius-pill: 999px;
 }
 
 @theme inline {
   --color-rl-bg: var(--rl-bg);
   --color-rl-surface: var(--rl-surface);
-  --color-rl-surface-elevated: var(--rl-surface-elevated);
+  --color-rl-surface-raised: var(--rl-surface-raised);
+  --color-rl-surface-soft: var(--rl-surface-soft);
   --color-rl-border: var(--rl-border);
+  --color-rl-border-strong: var(--rl-border-strong);
   --color-rl-text: var(--rl-text);
   --color-rl-text-muted: var(--rl-text-muted);
+  --color-rl-text-subtle: var(--rl-text-subtle);
+  --color-rl-red: var(--rl-red);
+  --color-rl-red-hover: var(--rl-red-hover);
+  --color-rl-red-pressed: var(--rl-red-pressed);
+  --color-rl-blue: var(--rl-blue);
   --color-rl-navy: var(--rl-navy);
-  --color-rl-gray: var(--rl-gray);
-  --color-rl-accent: var(--rl-accent);
-  --color-rl-accent-hover: var(--rl-accent-hover);
-  --color-rl-accent-secondary: var(--rl-accent-secondary);
-  --color-rl-flame: var(--rl-flame);
+  --color-rl-yellow: var(--rl-yellow);
   --color-rl-success: var(--rl-success);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -56,12 +71,40 @@ html {
 body {
   background: var(--rl-bg);
   color: var(--rl-text);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--rl-accent-secondary) 25%, transparent);
+  background: color-mix(in srgb, var(--rl-blue) 20%, transparent);
   color: var(--rl-text);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+.animate-fade-up-delay-1 {
+  animation-delay: 0.08s;
+}
+
+.animate-fade-up-delay-2 {
+  animation-delay: 0.16s;
+}
+
+.animate-fade-up-delay-3 {
+  animation-delay: 0.24s;
 }

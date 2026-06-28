@@ -18,11 +18,11 @@ export default function ContactPage() {
           Reach out to the {COMPANY.shortName} team for product questions,
           partnerships, or support.
         </p>
-        <div className="mt-8 rounded-2xl border border-rl-border bg-white/[0.03] p-6 backdrop-blur-sm">
+        <div className="mt-8 rounded-xl border border-rl-border bg-rl-surface p-6">
           <p className="text-sm text-rl-text-muted">Email</p>
           <a
             href="mailto:contact@rocketlogic.com"
-            className="mt-2 inline-flex min-h-11 items-center text-base font-medium text-rl-accent-secondary transition-colors hover:text-rl-text"
+            className="mt-2 inline-flex min-h-11 items-center text-base font-medium text-rl-blue transition-colors hover:text-rl-text"
           >
             contact@rocketlogic.com
           </a>

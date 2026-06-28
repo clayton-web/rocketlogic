@@ -20,7 +20,7 @@ export default function TermsPage() {
           questions, contact{" "}
           <a
             href="mailto:contact@rocketlogic.com"
-            className="text-rl-accent-secondary transition-colors hover:text-rl-text"
+            className="text-rl-blue transition-colors hover:text-rl-text"
           >
             contact@rocketlogic.com
           </a>
