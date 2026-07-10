@@ -19,7 +19,8 @@ export const products: Product[] = [
   {
     id: "pm-dashboard",
     name: "Rocket PM Dashboard",
-    status: "coming-soon",
+    status: "live",
+    href: "/dashboard",
   },
   {
     id: "maintenance-triage",

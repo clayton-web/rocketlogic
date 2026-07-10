@@ -49,13 +49,20 @@ Add an entry to `lib/products.ts`. Product cards and future navigation update au
 
 ## Deployment
 
-Deploy to Vercel:
+**This repository is the only allowed deploy source for Vercel project `rocketlogic`**,
+which owns `rocketlogic.ca` / `www.rocketlogic.ca`.
+
+Do **not** deploy the inspection or PM Dashboard apps into `rocketlogic`.
+Those apps deploy to `rocket-inspection-app` and `rocket-pm-dashboard-app`; this site
+proxies `/inspection/*` and `/dashboard/*` via `vercel.json` rewrites.
+
+See [docs/deployment-ownership.md](./docs/deployment-ownership.md).
 
 ```bash
 npm run build
+vercel link --project rocketlogic --yes
+vercel deploy --prod --yes
 ```
-
-The project is configured for Vercel out of the box via `vercel.json`.
 
 ## Brand Colors
 
